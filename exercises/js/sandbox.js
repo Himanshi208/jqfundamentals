@@ -28,8 +28,7 @@ $(document).ready(function()
     console.log($(element).attr('alt'));
   });
 
-  // Select the search input text box, then traverse up to the form and add a 
-  //class to the form.
+  // Select the search input text box, then traverse up to the form and add a class to the form.
   $('#search input[type="text"]').parents('#search').addClass('newClass');
 
   // Select the list item inside #myList that has a class of "current" and remove 
