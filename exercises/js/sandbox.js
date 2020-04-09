@@ -48,9 +48,8 @@ $(document).ready(function()
   var listItems = '', maxListItems = 5;
   for (i = 1; i <= maxListItems;i = i + 1)
   {
-    listItems = listItems + '<li> New List Item ' + i + '</li>';
+    $('#myList').append($('<li>').text(`New item ${i}`));
   } 
-  $('#myList').append(listItems);
 
   // Remove the odd list items
   $('#myList li:even').remove();
