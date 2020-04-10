@@ -29,14 +29,14 @@ $(document).ready(function()
   });
 
   // Select the search input text box, then traverse up to the form and add a class to the form.
-  $('#search input[type="text"]').parents('#search').addClass('newClass');
+  $('#search input[type="text"]').closest('#search').addClass('newClass');
 
   // Select the list item inside #myList that has a class of "current" and remove 
   //that class from it; add a class of "current" to the next list item.
   $('#myList li.current').removeClass('current').next().addClass('current');
 
   // Select the select element inside #specials; traverse your way to the submit button.
-  $('#specials select').parents('ul').find('input.input_submit');
+  $('#specials select').closest('ul').find('input.input_submit');
 
   // Select the first list item in the #slideshow element; add the class "current" to it, and then add a class of "disabled" to its sibling elements.
   $('#slideshow li:first').addClass('current').siblings().addClass('disabled');
