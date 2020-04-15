@@ -8,7 +8,7 @@ class BlogPost
   init() 
   {
     var $target = $('<div/>');
-    this.blogHeadings.after($target).data('blogData', $target);
+    this.blogHeadings.after($target);
     this.bindEvents();
   }
   
@@ -21,8 +21,10 @@ class BlogPost
   {
     return function(event) 
     {
+      $option = $(this);
       event.preventDefault();
-      var $target = $(this).next(), postId = $(this).find('a').attr('href').split('#')[1];
+      var $target = $option.next(), 
+                    postId = $option.find('a').attr('href').split('#')[1];
       $target.load('data/blog.html div#' + postId);
     }
   }
