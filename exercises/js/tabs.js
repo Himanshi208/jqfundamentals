@@ -37,7 +37,7 @@ class Tabs
   {
     var _this = this;
     removedHeaderElements.each(function (index, element) {
-      var listItem = $('<li></li>').text(headings[index]).append(removedHeaderElements[index]);
+      var listItem = $('<li>').text(headings[index]).append(removedHeaderElements[index]);
       _this.tabList.append(listItem);
     });
   }
