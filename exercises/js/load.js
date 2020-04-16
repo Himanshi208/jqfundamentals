@@ -24,6 +24,7 @@ class BlogPost
       $option = $(this);
       event.preventDefault();
       var $target = $option.next(), 
+      
                     postId = $option.find('a').attr('href').split('#')[1];
       $target.load('data/blog.html div#' + postId);
     }
