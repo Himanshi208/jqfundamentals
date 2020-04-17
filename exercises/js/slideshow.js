@@ -7,7 +7,7 @@ class Slideshow
 
   init() 
   {
-    this.navTotalCount = $('<p/>', { text : 'Total = ' + this.slidesElements.length, style: 'display:inline'  });
+    this.navTotalCount = $('<p/>', { text : 'Total = ' + this.slidesElements.length}).addClass('newClass');
     this.navCurrent = $('<p/>', { style: 'display:inline; position:relative; left: 300px;' });
     var mainDiv = $('#main');
     mainDiv.prepend($('<div/>').append(this.navTotalCount, this.navCurrent));

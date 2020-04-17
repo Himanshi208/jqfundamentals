@@ -332,3 +332,7 @@ margin: 15px 0;
 	z-index: 100;
 	
 }
+
+.newClass{
+  display: inline;
+}
