@@ -16,9 +16,8 @@ class Stack
   init() 
   {
     this.addItemButton.on('click', this.addNewItem());
-    this.stack.delegate('div.item', 'click', this.changeColorOrRemove());
+    this.stack.on('click', 'div.item', this.changeColorOrRemove());
   }
-  
   
   addNewItem() 
   {
@@ -40,16 +39,16 @@ class Stack
     var _this = this;
     return function() 
     {
-      if(!$(this).index()) 
+      let $option = $(this);
+      if(!$option.index()) 
       {
-        $(this).remove();
+        $option.remove();
         _this.counter--;
       } 
       else 
       {
-        $(this).addClass('chageColor');
+        $option.addClass('chageColor');
       }
-  
     }
   }
 }
