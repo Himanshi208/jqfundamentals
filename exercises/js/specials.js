@@ -1,42 +1,53 @@
-function Specials(selectorStrings) {
+class Specials{
+  constructor(selectorStrings) 
+  {
     this.$specialForm = $(selectorStrings.formContainer);
     this.$listButton = $(selectorStrings.listButton);
   }
   
-  Specials.prototype.init = function() {
+  init() 
+  {
     var $target = $('<div/>').attr('data-behaviour', 'target-div');
     this.$specialForm.after($target).data('data-special-form', 'target-div');
     this.$listButton.remove();
     this.bindEvents();
-  };
+  }
   
-  Specials.prototype.bindEvents = function() {
-    this.$specialForm.on('change', 'select', this.showSpecial());
-  };
+  bindEvents() 
+  {
+    this.$specialForm.on('change', 'select' , this.showSpecial());
+  }
   
-  Specials.prototype.showSpecial = function() {
+  showSpecial() 
+  {
     var _this = this;
-    return function() {
+    return function() 
+    {
       var dataBehaviourValue = _this.$specialForm.data('data-special-form'),
           selectedDay = $(this.options[this.selectedIndex]).attr('value'),
           $target = _this.$specialForm.parent()
             .find(`[data-behaviour=${ dataBehaviourValue }]`);
-      if(selectedDay){
+      if(selectedDay)
+      {
         _this.ajaxRequestSender($target, selectedDay);
       }
     }
-  };
+  }
   
-  Specials.prototype.ajaxRequestSender = function($target, selectedDay) {
+  ajaxRequestSender($target, selectedDay) 
+  {
     $target.empty();
-    if(this.CachedJson) {
+    if(this.CachedJson) 
+    {
       this.successHandler(this.CachedJson, selectedDay, $target);
-    } else {
+    } else 
+    {
       this.sendAjaxRequest(selectedDay, $target);
     }
-  };
+  }
   
-  Specials.prototype.sendAjaxRequest = function(selectedDay, $target) {
+  sendAjaxRequest(selectedDay, $target) 
+  {
     var _this = this;
     $.ajax({
         url: 'data/specials.json',
@@ -50,26 +61,30 @@ function Specials(selectorStrings) {
           _this.errorHandler();
         }
       })
-  };
+  }
   
-  Specials.prototype.successHandler = function(json, selectedDay, $target) {
+  successHandler(json, selectedDay, $target) 
+  {
     var offerOfTheDay = json[selectedDay];
     $target.append($('<h4/>', { text: offerOfTheDay.title}))
       .append($('<p/>', { text: offerOfTheDay.text }))
       .append($('<img/>', { src: offerOfTheDay.image }));
     $target.css('color', offerOfTheDay.color);
     this.CachedJson = json;
-  };
+  }
   
-  Specials.prototype.errorHandler = function() {
+  errorHandler() 
+  {
     alert('Your Request cannont be processed');
-  };
+  }
+}
   
-  $(function() {
-    var selectorStrings = {
-      formContainer: 'div#specials form',
-      listButton: 'div#specials li.buttons'
-    }
-    var specials = new Specials(selectorStrings);
-    specials.init();
-  })
+$(document).ready(function()
+{
+  var selectorStrings = {
+    formContainer: 'div#specials form',
+    listButton: 'div#specials li.buttons'
+  }
+  var specials = new Specials(selectorStrings);
+  specials.init();
+})
