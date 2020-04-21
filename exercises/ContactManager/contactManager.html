@@ -1,0 +1,40 @@
+<!--We are building a contact manager where user can create contacts by specifying name and email. Search them and delete them.
+
+Add two text fields to take input of Name and Email from the user
+A button to add contact, clicking on this button will validate name and email. If both name and email are present and email is valid against a regexp, add a contact box on the page. This box would contain the information entered by the user.
+Include a Delete button in the contact on clicking which the contact can be deleted.
+Create one search field for searching the contacts from their names only. It should filter/search contacts as I start typing in the search box i.e. realtime.
+When the search field is empty, all the contacts should be displayed.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="contactManager.css">
+</head>
+<body>
+  <div class="contact-manager">
+    <form class="add-contact">
+      <label> Name: </label>
+      <input type="text" for="name" class="name">
+      <label> Email: </label>
+      <input type="text" for="email" class="email">
+      <input type="submit" value="Add Contact" class="addBtn">
+    </form>
+    <br>
+    <form class="search-contact">
+      <label>Search:</label>
+      <input type="text" for="search" class="search">
+    </form>
+    <br>
+    <input type="button" value="List View" class="listViewBtn">
+    <input type="button" value="Grid View" class="gridViewBtn">
+  </div>
+  <div class="contact-details"></div>
+  <script src="libs/jquery-1.11.3.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/email.js"></script>
+  <script src="js/contact_managerNew.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

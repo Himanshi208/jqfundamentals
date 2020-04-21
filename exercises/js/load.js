@@ -1,3 +1,7 @@
+/*Open the file /exercises/index.html in your browser. Use the file /exercises/js/load.js. Your task is to load the content of a blog item when a user clicks on the title of the item.
+
+Create a target div after the headline for each blog post and store a reference to it on the headline element using $.fn.data.
+Bind a click event to the headline that will use the $.fn.load method to load the appropriate content from /exercises/data/blog.html into the target div. Don't forget to prevent the default action of the click event.*/
 class BlogPost
 {
   constructor(blogHeadings) 

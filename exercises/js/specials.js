@@ -1,3 +1,14 @@
+/* Open the file /exercises/index.html in your browser. Use the file /exercises/js/specials.js. Your task is to show the user details about the special for a given day when the user selects a day from the select dropdown.
+
+Append a target div after the form that's inside the #specials element; this will be where you put information about the special once you receive it.
+Bind to the change event of the select element; when the user changes the selection, send an Ajax request to /exercises/data/specials.json.
+
+When the request returns a response, use the value the user selected in the select (hint: $.fn.val) to look up information about the special in the JSON response.
+Add some HTML about the special to the target div you created.
+Finally, because the form is now Ajax-enabled, remove the submit button from the form.
+Note: that we're loading the JSON every time the user changes their selection. How could we change the code so we only make the request once, and then use a cached response when the user changes their choice in the select?
+*/
+
 class Specials{
   constructor(selectorStrings) 
   {

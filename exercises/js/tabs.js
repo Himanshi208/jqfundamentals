@@ -1,3 +1,13 @@
+/*Open the file /exercises/index.html in your browser. Use the file /exercises/js/tabs.js. Your task is to create tabbed navigation for the two div.module elements. To accomplish this:
+
+Hide all of the modules.
+Create an unordered list element before the first module.
+Iterate over the modules using $.fn.each. For each module, use the text of the h2 element as the text for a list item that you add to the unordered list element.
+Bind a click event to the list item that:
+-Shows the related module, and hides any other modules
+-Adds a class of "current" to the clicked list item
+-Removes the class "current" from the other list item
+Finally, show the first tab. */
 class Tabs 
 {
   constructor(modules)
