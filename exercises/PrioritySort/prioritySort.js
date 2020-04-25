@@ -1,0 +1,79 @@
+class PrioritySort
+{
+  constructor(elements) 
+  {
+    this.list = elements.list;
+    this.seeMore = elements.seeMore;
+    this.seeLess = elements.seeLess;
+  }
+
+  init() 
+  {
+    this.display();
+  }
+
+  display()
+  {
+    this.list.each((idx,obj) => {
+        this.priorityList($(obj))
+        this.insertLinks($(obj))
+      })
+  }
+
+  priorityList(obj)
+  {
+    let liELements = this.getListElements(obj);
+    let count = obj.data('inital-items-count');
+    let newList= liELements.sort((a,b) => { return $(a).data('priority-order') > $(b).data('priority-order') });
+    liELements.remove();
+    obj.prepend(newList);
+    newList.slice(count, newList.length).show();
+  }
+
+  getListElements(obj) {
+    return obj.find('li')
+  }
+
+  insertLinks(obj) {
+    let seeMore = this.seeMore;
+    let seeLess = this.seeLess;
+    this.bindShowAll(seeMore, obj);
+    this.bindShowLess(seeLess, obj);
+  }
+
+  bindShowAll(obj, target) {
+    obj.on('click', () => {
+      this.alphabeticList(target)
+    })
+  }
+
+  bindShowLess(obj, target) {
+    obj.on('click', () => {
+      this.priorityList(target)
+    })
+  }
+
+
+  alphabeticList(obj)
+  {
+    var liELements = this.getListElements(obj);
+    let newList= liELements.sort((a,b) => { return $(a).text().toUpperCase() > $(b).text().toUpperCase() })
+    liELements.remove()
+    obj.prepend(newList.show())
+  }
+
+}
+  
+$(document).ready(function()
+{
+  var $listContainer = $('div.list');
+  var requiredElements = {
+    list: $listContainer.find('ul.priority-sort'),
+    seeMore : $listContainer.find('button.more'),
+    seeLess : $listContainer.find('button.less'),
+  };
+  var prioritySort = new PrioritySort(requiredElements);
+  prioritySort.init();
+})
+  
+  
