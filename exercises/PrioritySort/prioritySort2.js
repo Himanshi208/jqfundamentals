@@ -1,3 +1,9 @@
+/* -Here, 'See All' and 'See Less' links should display more and less list items but should not do any sorting.
+-For sorting purpose, append a header to the lists with class 'priority-sort', which should contain 4 buttons i.e. Alphabetic Sort, Priority Sort, Ascending and Descending.
+-I should be able to select one sorting type between alphabetic sort and priority sort. And, one sorting order between Ascending and Descending. The selected buttons should be highlighted as well.
+-By default, Priority Sort and Ascending should be selected.
+-The sorting should work fine with both expanded list and contracted list. */
+
 class PrioritySort
 {
   constructor(elements) 
