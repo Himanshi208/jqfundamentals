@@ -39,6 +39,7 @@ class PrioritySort
     let seeLess = this.seeLess;
     this.bindShowAll(seeMore, obj);
     this.bindShowLess(seeLess, obj);
+    obj.append(seeMore,seeLess);
   }
 
   bindShowAll(obj, target) {
@@ -69,8 +70,8 @@ $(document).ready(function()
   var $listContainer = $('div.list');
   var requiredElements = {
     list: $listContainer.find('ul.priority-sort'),
-    seeMore : $listContainer.find('button.more'),
-    seeLess : $listContainer.find('button.less'),
+    seeMore : $('<button>See More</a>'),
+    seeLess : $('<button>See Less</a>')
   };
   var prioritySort = new PrioritySort(requiredElements);
   prioritySort.init();
