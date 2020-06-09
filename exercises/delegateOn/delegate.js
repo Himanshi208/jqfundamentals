@@ -1,3 +1,10 @@
+/* Create a stack of divs. Initially an empty container should display
+- a button on right side says "add item", should add a div to the stack with an incremental number(starting from 1) 
+- clicking any item in the stack should highlight that item
+- clicking the last item on the stack should remove that item from the stack
+
+hint: use jQuery delegate. live method has been removed from the latest version of jQuery so you may want to use on() or delegate() */
+
 function Item(itemDiv) 
 {
   this.$itemDiv = itemDiv;

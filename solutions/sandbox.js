@@ -1,5 +1,5 @@
 /********************************
- * Selecting					*
+ * Selecting Open the file /exercises/index.html in your browser. Use the file /exercises/js/sandbox.js to accomplish the following: 					*
  ********************************/
 
 // Get all of the div elements that have a class of "module"

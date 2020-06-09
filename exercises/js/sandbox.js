@@ -1,3 +1,6 @@
+//Open the file /exercises/index.html in your browser. Use the file /exercises/js/sandbox.js to accomplish the following:
+
+
 $(document).ready(function()
 {
 

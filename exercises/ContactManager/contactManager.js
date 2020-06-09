@@ -1,3 +1,18 @@
+/* We are building a contact manager where user can create contacts by specifying name and email. Search them and delete them.
+
+Add two text fields to take input of Name and Email from the user
+A button to add contact, clicking on this button will validate name and email. If both name and email are present and email is valid against a regexp, add a contact box on the page. This box would contain the information entered by the user.
+Include a Delete button in the contact on clicking which the contact can be deleted.
+Create one search field for searching the contacts from their names only. It should filter/search contacts as I start typing in the search box i.e. realtime.
+When the search field is empty, all the contacts should be displayed.
+Refer following screenshots:
+
+https://www.dropbox.com/s/ca8kfexzcnr1v5o/home.png?dl=0
+https://www.dropbox.com/s/30du6xne579fx3k/filtering.png?dl=0
+Note: Take an object oriented approach and identify proper classes. Follow delegations
+
+*/
+
 class ContactManager
 {
   constructor(elements) 
